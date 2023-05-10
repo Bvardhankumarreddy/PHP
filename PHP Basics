@@ -1,1 +1,442 @@
+Example 1:- 
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "My first PHP script!";
+?>
+
+</body>
+</html>
+
+Q1) What is PHP?
+
+1. PHP is an acronym for "PHP: Hypertext Preprocessor"
+2. PHP is a widely-used, open source scripting language
+3. PHP scripts are executed on the server
+4. PHP is free to download and use
+
+Q2) What is a PHP file?
+
+1. PHP files can contain text, HTML, CSS, JavaScript, and PHP code.
+2. PHP code is executed on the server, and the result is returned to the browser as plain HTML
+3. PHP files have extension ".php"
+
+Q3) What can PHP do?
+
+1) PHP can generate dynamic page content
+2) PHP can create, open, read, write, delete, and close files on the server
+3) PHP can collect form data
+4) PHP can send and receive cookies
+5) PHP can add, delete, modify data in your database
+6) PHP can be used to control user-access
+7) PHP can encrypt data
+
+Q4) Why PHP?
+
+1) PHP runs on various platforms (Windows, Linus, Unix, Mac OS X, etc)
+2) PHP is compitable with almost all servers used today.
+3)PHP supports a wide range of databases
+4) PHP is free. Download it from the official PHP resource: www.php.net
+5) PHP is easy to learn and runs efficiently on the server side
+
+Q5) What new in PHP 7?
+
+1) PHP 7 is much faster than the previous popular stable release (PHP 5.6)
+2) PHP 7 has improved Error Handling
+3) PHP 7 supports stricter Type Declarations for function arguments
+4) PHP 7 supports new operators (like the spaceship operator: <=>)
+
+
+PHP Syntax
+
+A PHP script can be placed anywhere in the document.
+
+Syntax
+
+<?php
+// PHP code goes here
+?>
+
+The default file extension for PHP files is ".php".
+
+A PHP file normally contains HTML tags, and some PHP scripting code.
+
+Example 2: -
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My first PHP page</h1>
+
+<?php
+echo "Hello World!";
+?>
+
+</body>
+</html>
+
+Comments in PHP
+
+Example 3:- 
+
+// Single Line Comments
+/* Multiple Line Comments */
+
+Varaibles in PHP
+
+
+Rules for PHP variables:- 
+
+1) A variable starts with the $ sign, followed by the name of the variable
+2) A variable name must start with a letter or the underscore character
+3) A variable name cannot start with a numbe
+4) A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+5) Variable names are case-sensitive ($age and $AGE are two different variables)
+
+
+Example 4:- 
+
+<?php
+$txt = "W3Schools.com";
+echo "I love $txt!";
+?>
+
+Example 5:- 
+<?php
+$txt = "W3Schools.com";
+echo "I love " . $txt . "!";
+?>
+
+Example 6:-
+
+<?php
+$x = 5;
+$y = 4;
+echo $x + $y;
+?>
+
+PHP is Loosely Typed Language 
+
+We can see in the above examples that you didn't use any datatype for declaring the variables
+
+PHP automatically associates a data type to the variable, depending on its value. Since the data types are not set in a strict sense, you can do things like adding a string to an 
+integer without causing an error.
+
+In PHP 7, type declarations were added. This gives an option to specify the data type expected when declaring a function, and by enabling the strict requirement, it will throw a 
+"Fatal Error" on a type mismatch.
+
+
+
+PHP Variable Scope
+
+PHP has three different variable scope:
+
+1) Global
+2) Local
+3) Stattic
+
+Global and Local Scope
+
+=> A variable declared outside a function has a GLOBAL SCOPE and can only be accessed outside a function:
+
+Example 7:- Varibale with global Scope
+
+<?php
+$x = 5; // global scope
+
+function myTest() {
+  // using x inside this function will generate an error
+  echo "<p>Variable x inside function is: $x</p>";
+}
+myTest();
+
+echo "<p>Variable x outside function is: $x</p>";
+?>
+
+Note:- Calling variable inside the function will throw an error as it is not declared inside the function.
+
+=> A variable declared within a function has a LOCAL SCOPE and can only be accessed within that function:
+
+
+Example 8:-
+
+<?php
+function myTest() {
+  $x = 5; // local scope
+  echo "<p>Variable x inside function is: $x</p>";
+}
+myTest();
+
+// using x outside the function will generate an error
+echo "<p>Variable x outside function is: $x</p>";
+?>
+
+Note:- The varaible used outside function will throw an error. As it is not used in the outside the function.
+
+PHP Global Keyword
+
+The global keyword is used to access a global variable from within a function.
+
+Example 9:- 
+
+<?php
+$x = 5;
+$y = 10;
+
+function myTest() {
+  global $x, $y;
+  $y = $x + $y;
+}
+
+myTest();
+echo $y; // outputs 15
+?>
+
+PHP also stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable. This array is also accessible from within functions and can be
+used to update global variables directly.
+
+
+Example 10:-
+
+<?php
+$x = 5;
+$y = 10;
+
+function myTest() {
+  $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+}
+
+myTest();
+echo $y; // outputs 15
+?>
+
+PHP static word
+
+Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. We need it for a further job.
+To do this, use the static keyword when you first declare the variable:
+
+Example 11:-
+
+<?php
+function myTest() {
+  static $x = 0;
+  echo $x;
+  $x++;
+}
+
+myTest();
+myTest();
+myTest();
+?>
+
+Output:- 
+
+0
+1
+2
+
+Then, each time the function is called, that variable will still have the information it contained from the last time the function was called.
+Note:- The variable is still in the local function.
+
+PHP echo and print statements
+
+The differences are small: echo has no return value while print has a return value of 1 so it can be used in expressions. echo can take multiple parameters 
+(although such usage is rare) while print can take one argument. echo is marginally faster than print.
+
+PHP echo statement
+
+The echo statement can be used with or without parentheses: echo or echo().
+
+
+Example 12:- Displayin Text
+
+<?php
+echo "<h2>PHP is Fun!</h2>";
+echo "Hello world!<br>";
+echo "I'm about to learn PHP!<br>";
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+?>
+
+Example 13:- Displaying Varaiables
+
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+echo "<h2>" . $txt1 . "</h2>";
+echo "Study PHP at " . $txt2 . "<br>";
+echo $x + $y;
+?>
+
+The print statement
+
+Example 14:- Displaying Text
+
+<?php
+print "<h2>PHP is Fun!</h2>";
+print "Hello world!<br>";
+print "I'm about to learn PHP!";
+?>
+
+Example 15:- Displayin Variables
+
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+print "<h2>" . $txt1 . "</h2>";
+print "Study PHP at " . $txt2 . "<br>";
+print $x + $y;
+?>
+
+
+PHP Data Types
+
+1) String
+2) Integer
+3) Float (floating point numbers - also called double)
+4) Boolean
+5) Array
+6) Object
+7) NULL
+8) Resource
+
+
+PHP String
+
+A string is a sequence of characters, like "Hello world!".
+
+A string can be any text inside quotes. You can use single or double quotes.
+
+
+Example 16:-
+
+<?php
+$x = "Hello world!";
+$y = 'Hello world!';
+
+echo $x;
+echo "<br>";
+echo $y;
+?>
+
+PHP Integer
+
+An interger data type is a non-decimal number between -2,147,483,648 and 2,147,483,647.
+
+Rules for Integer:-
+
+1) An integer must have at least one digit
+2) An integer must not have a decimal point
+3) An integer can be either positive or negative
+4) Integers can be specified in: decimal (base 10), hexadecimal (base 16), octal (base 8), or binary (base 2) notation.
+
+The PHP var_dump() function returns the data type and value.
+
+Example 17:-
+
+<?php
+$x = 5985;
+var_dump($x);
+?>
+
+Output:- int(5985)
+
+PHP float
+
+A float (floating point number) is a number with a decimal point or a number in exponential form.
+
+Example 18:-
+
+<?php
+$x = 10.365;
+var_dump($x);
+?>
+
+PHP Boolean
+
+A Boolean represents two possible states: TRUE or FALSE.
+$x = true;
+$y = false;
+
+
+PHP Array
+
+An array stores multiple values in one single variable.
+
+Example 19:-
+
+<?php
+$cars = array("Volvo","BMW","Toyota");
+var_dump($cars);
+?>
+
+PHP Object
+
+Classes and Objects are two main ascepts of Object-oriented-Porgramming
+
+A class a template of objects, and an object is an instance of class.
+
+When the individual objects are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.
+
+Let's assume we have a class named Car. A Car can have properties like model, color, etc. We can define variables like $model, $color, and so on, to hold the values of these 
+properties.
+
+When the individual objects (Volvo, BMW, Toyota, etc.) are created, they inherit all the properties and behaviors from the class, but each object will have different values for the 
+properties.
+
+If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
+
+Example 20:-
+
+<?php
+class Car {
+  public $color;
+  public $model;
+  public function __construct($color, $model) {
+    $this->color = $color;
+    $this->model = $model;
+  }
+  public function message() {
+    return "My car is a " . $this->color . " " . $this->model . "!";
+  }
+}
+
+$myCar = new Car("black", "Volvo");
+echo $myCar -> message();
+echo "<br>";
+$myCar = new Car("red", "Toyota");
+echo $myCar -> message();
+?>
+
+PHP Null Value
+
+Null is a special data type which can have only one value: NULL.
+
+A variable of data type NULL is a variable that has no value assigned to it.
+
+Tip: If a variable is created without a value, it is automatically assigned a value of NULL.
+
+Variables can also be emptied by setting the value to NULL:
+
+<?php
+$x = "Hello world!";
+$x = null;
+var_dump($x);
+?>
+
+PHP Resource
+
+The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP
+A common example of using the resource data type is a database call.
+
+
+
 
