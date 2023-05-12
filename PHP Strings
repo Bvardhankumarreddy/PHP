@@ -1,0 +1,304 @@
+A string is a sequence of characters, like "Hello world!".
+
+strlen() => function return the length of a string
+
+Example 1:- 
+
+<?php
+echo strlen("Hello world!"); // outputs 12
+?>
+
+str_word_count() => function return the number of words in the string
+
+Example 2:-
+
+<?php
+echo str_word_count("Hello world!"); // outputs 2
+?>
+
+strrev() => function reverses the string
+
+Example 3:-
+
+<?php
+echo strrev("Hello world!"); // outputs !dlrow olleH
+?>
+
+strpos() => Search For a Text Within a string
+
+The PHP strpos() function searches for a specific text within a string. If a match is found, the function returns the character position 
+of the first match. If no match is found, it will return FALSE.
+
+Example 4:-
+
+<?php
+echo strpos("Hello world!", "world"); // outputs 6
+?>
+
+str_replace () => Replace text within a string
+
+Example 5:-
+
+<?php
+echo str_replace("world", "Dolly", "Hello world!"); // outputs Hello Dolly!
+?>
+
+
+1. addcslashes() => Returns a string with backslashes in front of the specified characters
+
+syntax:- addcslashes(string,characters)
+
+Example 6:- 
+
+<?php
+$str = addcslashes("Hello World!","W");
+echo($str);
+?>
+
+Note: The addcslashes() function is case-sensitive.
+
+Note: Be careful using addcslashes() on 0 (NULL), r (carriage return), n (newline), f (form feed), t (tab) and v (vertical tab). 
+In PHP, \0, \r, \n, \t, \f and \v are predefined escape sequences.
+
+Example 7:- 
+
+<?php
+$str = "Welcome to my humble Homepage!";
+echo $str."<br>";
+echo addcslashes($str,'m')."<br>";
+echo addcslashes($str,'H')."<br>";
+?>
+
+Output:- 
+Welcome to my humble Homepage!
+Welco\me to \my hu\mble Ho\mepage!
+Welcome to my humble \Homepage!
+
+Example 8:-
+
+<?php
+$str = "Welcome to my humble Homepage!";
+echo $str."<br>";
+echo addcslashes($str,'A..Z')."<br>";
+echo addcslashes($str,'a..z')."<br>";
+echo addcslashes($str,'a..g');
+?>
+
+Output:-
+
+Welcome to my humble Homepage!
+\Welcome to my humble \Homepage!
+W\e\l\c\o\m\e \t\o \m\y \h\u\m\b\l\e H\o\m\e\p\a\g\e!
+W\el\com\e to my hum\bl\e Hom\ep\a\g\e!
+
+2. addslashes() => Returns a string with backslashes in front of predefined characters
+
+The predefined characters are:
+
+1. single quote (')
+2. double quote (")
+3. backslash (\)
+4. NULL
+
+
+Example 9:- Add a backslash in front of each double quote (")
+
+<?php
+$str = addslashes('What does "yolo" mean?');
+echo($str);
+?>
+
+
+Output:- What does \"yolo\" mean?
+
+Example 10:- 
+
+<?php
+$str = "Who's Peter Griffin?";
+echo $str . " This is not safe in a database query.<br>";
+echo addslashes($str) . " This is safe in a database query.";
+?>
+
+Output:- 
+
+Who's Peter Griffin? This is not safe in a database query.
+Who\'s Peter Griffin? This is safe in a database query.
+
+3. bin2hex()
+
+The bin2hex() function converts a string of ASCII characters to hexadecimal values. The string can be converted back using the pack() 
+function.
+
+Eample 11:-
+
+<?php
+$str = "Hello world!";
+echo bin2hex($str) . "<br>";
+echo pack("H*",bin2hex($str)) . "<br>";
+?>
+
+Output:- 
+
+48656c6c6f20776f726c6421
+Hello world!
+
+
+4. chop() => Remove characters from the right end of a string.
+
+Syntax:- chop(string,charlist)
+
+Example 12:-
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$str = "Hello World!";
+echo $str . "<br>";
+echo chop($str,"World!");
+?>
+
+</body>
+</html>
+
+Output:-
+Hello World!
+Hello
+
+Example 13:- 
+
+<?php
+$str = "Hello World!\n\n";
+echo $str;
+echo chop($str);
+?>
+
+Output:-
+
+Hello World! Hello World!
+
+5. chr() => Return characters from different ASCII values.
+
+Example 14:-
+
+<?php
+echo chr(52) . "<br>"; // Decimal value
+echo chr(052) . "<br>"; // Octal value
+echo chr(0x52) . "<br>"; // Hex value
+?>
+
+Output: -
+
+4
+*
+R
+
+6. chunk_split() => Splits a string into a series of smaller parts
+7. convert_cyr_string() => Converts a string from one Cyrillic character-set to another
+8. convert_uudecode() => Decodes a uuencoded string
+9. convert_uuencode() => Encodes a string using the uuencode algorithm
+10. count_chars() => Returns information about characters used in a string
+11. crc32() => Calculates a 32-bit CRC for a string
+12. crypt() => 	One-way string hashing
+13. echo() => Outputs one or more strings
+14. explode() => 	Breaks a string into an array
+15. fprintf() => Writes a formatted string to a specified output stream
+16. get_html_translation_table() => Returns the translation table used by htmlspecialchars() and htmlentities()
+17. hebrev() => Converts Hebrew text to visual text
+18. hebrevc() => Converts Hebrew text to visual text and new lines (\n) into <br>
+19. hex2bin() => Converts a string of hexadecimal values to ASCII characters
+20. html_entity_decode() => Converts HTML entities to characters
+21. htmlentities() => Converts characters to HTML entities.
+22. htmlspecialchars_decode() => Converts some predefined HTML entities to characters.
+23. htmlspecialchars() => Converts some predefined characters to HTML entities
+24. implode() => Returns a string from the elements of an array
+25. join() =>  Alias of implode()
+26. lcfirst() => Converts the first character of a string to lowercase
+27. levenshtein() => Returns the Levenshtein distance between two strings
+28. localeconv() => Returns locale numeric and monetary formatting information
+29. ltrim() => Removes whitespace or other characters from the left side of a string
+30. md5() => Calculates the MD5 hash of a string
+31. md5_file() => Calculates the MD5 hash of a file
+32. metaphone() => Calculates the metaphone key of a string
+33. money_format() => Returns a string formatted as a currency string
+34. nl_langinfo() => Returns specific local information
+35. nl2br() => Inserts HTML line breaks in front of each newline in a string
+36. number_format() => Inserts HTML line breaks in front of each newline in a string
+37. ord() => Returns the ASCII value of the first character of a string
+38. parse_str() => Parses a query string into variables
+39. print() => Parses a query string into variables
+40. printf() => Outputs a formatted string.
+41. quoted_printable_decode() => Converts a quoted-printable string to an 8-bit string.
+42. quoted_printable_encode() => Converts an 8-bit string to a quoted printable string.
+43. quotemeta() => Quotes meta characters.
+44. rtrim() => 	Removes whitespace or other characters from the right side of a string.
+45. setlocale() => Sets locale information.
+46. sha1() => Calculates the SHA-1 hash of a string.
+47. sha1_file() => Calculates the SHA-1 hash of a file.
+48. similar_text() => Calculates the similarity between two strings.
+49. soundex() => Calculates the soundex key of a string
+50. sprintf() => Writes a formatted string to a variable.
+51. sscanf() => Parses input from a string according to a format.
+52. str_getcsv() => Parses a CSV string into an array.
+53. str_ireplace() => Replaces some characters in a string (case-insensitive).
+54. str_pad() => Pads a string to a new length.
+55. str_repeat() => Repeats a string a specified number of times.
+56. str_replace() => Replaces some characters in a string (case-sensitive).
+57. str_rot13() => Performs the ROT13 encoding on a string.
+58. str_shuffle() => Randomly shuffles all characters in a string.
+59. str_split() => Splits a string into an array
+60. str_word_count() => Count the number of words in a string. 
+61. strcasecmp() => Compares two strings (case-insensitive).
+62. strchr() => Finds the first occurrence of a string inside another string (alias of strstr()).
+63. strcmp() => Compares two strings (case-sensitive).
+64. strcoll() => Compares two strings (locale based string comparison).
+65. strcspn() => Returns the number of characters found in a string before any part of some specified characters are found.
+66. strip_tags() => Strips HTML and PHP tags from a string.
+67. stripcslashes() => Unquotes a string quoted with addcslashes().
+68. stripslashes() => Unquotes a string quoted with addslashes().
+69. stripos() => Returns the position of the first occurrence of a string inside another string (case-insensitive).
+70. stristr() => Finds the first occurrence of a string inside another string (case-insensitive).
+71. strlen() => Returns the length of a string.
+72. strnatcasecmp() => Compares two strings using a "natural order" algorithm (case-insensitive).
+73. strnatcmp() => Compares two strings using a "natural order" algorithm (case-sensitive
+74. strncasecmp() => String comparison of the first n characters (case-insensitive).
+75. strncmp() => String comparison of the first n characters (case-sensitive).
+76. strpbrk() => 	Searches a string for any of a set of characters
+77. strpos() => 	Returns the position of the first occurrence of a string inside another string (case-sensitive)
+78. strrchr() => Finds the last occurrence of a string inside another string.
+79. strrev() => Reverses a string.
+80. strripos() => Finds the position of the last occurrence of a string inside another string (case-insensitive).
+81. strrpos() => Finds the position of the last occurrence of a string inside another string (case-sensitive)
+82. strspn() => Returns the number of characters found in a string that contains only characters from a specified charlist.
+83. strstr() => Finds the first occurrence of a string inside another string (case-sensitive).
+84. strtok() => Splits a string into smaller strings.
+85. strtok() => Converts a string to lowercase letters.
+86. strtoupper() => Converts a string to uppercase letters.
+87. strtr() => Translates certain characters in a string.
+88. substr() => Returns a part of a string.
+89. substr_compare() => Compares two strings from a specified start position (binary safe and optionally case-sensitive).
+90. substr_count() => Counts the number of times a substring occurs in a string.
+91. substr_replace() => Replaces a part of a string with another string.
+92. trim() => Removes whitespace or other characters from both sides of a string
+93. ucfirst() => Converts the first character of a string to uppercase
+94. ucwords() => Converts the first character of each word in a string to uppercase
+95. vfprintf() => Writes a formatted string to a specified output stream
+96. vprintf() => Outputs a formatted string
+97. vsprintf() => Writes a formatted string to a variable
+98. wordwrap() => Wraps a string to a given number of characters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
