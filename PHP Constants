@@ -75,10 +75,63 @@ PHP OPERATORS
 
 1) Arthmetic Operators
 2) Assignment Operators
-3) Comparison Operators ( <=> -> spaceship -> Returns an integer less than, equal to, or greater than zero, depending on if $x is less than, equal to, or greater than $y.)
+3) Comparison Operators 
 4) Logical Operators
 5) Increment/Decrement Operators
 6) String Operators
 7) Array Operators
 8) Conditional assignment Operators
+  
+
+String OPerators
+   Operator     Name                       Example                      Result
+=>  .          Concatenation              $txt1.$txt2               Concatenating of $txt1 and $txt2
+=> .=.         Concatenation assignment   $txt1.=$txt2              Appends $txt1 to $txt2
+
+PHP Comparison Operators
+
+
+     Operator             Name                       Example                   Result
+=>   ==                   Equal                     $x == $y                   Returns true if $x is equal to $y
+=>   ===                  Identical                 $x === $y                  Return true if $x is equal to $y and they are of same type.
+=>   <> or !=             Not Equal to              $x != $y or $x <> $y       Returns true if $x is not equal to $y
+=>   !==                  Not Identical             $x !== $y                  Returns true if $x is not equal to $y, or they are not of the same type
+=>    <=>                 spaceship                  $x <=> $y                 Returns an integer less than, equal to, or greater than zero, depending on if $x is less than, equal to, or greater than $y
+
+PHP Array Operators
+
+
+ Operator              Name               Result
+ 
+ +                    Union
+ ==                   Equality            Returns true if $x and $y have the same key/value pairs
+ ===                  Identity            Returns true if $x and $y have the same key/value pairs in the same order and of the same types
+ !=                   Inequality       
+ <>                   Inequality
+ !==                  Non-Identity        Returns true if $x is not identical to $y
+ 
+ 
+ 
+ 
+ PHP Conditonal Assignment Operators
+ 
+ Operator         Name                        Example                       Result
+ 
+ ?:               Ternary                     $x = expr1 ? expr2 : expr3    Returns the value of $x.
+                                                                            The value of $x is expr2 if expr1 = TRUE.
+                                                                            The value of $x is expr3 if expr1 = FALSE
+                                                                            
+??                Null coalescing             $x = expr1 ?? expr2            Returns the value of $x.
+                                                                             The value of $x is expr1 if expr1 exists, and is not NULL.
+                                                                              If expr1 does not exist, or is NULL, the value of $x is expr2.                                                                            
+ 
+ 
+
+
+
+
+
+
+
+
 
