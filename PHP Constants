@@ -37,3 +37,48 @@ Output:-
 
 Welcome to W3Schools.com!
 
+
+PHP Constant Arrays
+
+Example:-
+
+<?php
+define("cars", ["Alfa Romeo","BMW","Toyota"]);
+echo cars[0];
+?>
+
+Output:-
+
+Alfa Romeo
+
+Constants are Globals
+
+=> Constants are automatically global and can be used across the entire script.
+
+Example: -
+
+<?php
+define("GREETING", "Welcome to W3Schools.com!");
+
+function myTest() {
+  echo GREETING;
+}
+ 
+myTest();
+?>
+
+Output:-
+Welcome to W3Schools.com!
+
+
+PHP OPERATORS
+
+1) Arthmetic Operators
+2) Assignment Operators
+3) Comparison Operators ( <=> -> spaceship -> Returns an integer less than, equal to, or greater than zero, depending on if $x is less than, equal to, or greater than $y.)
+4) Logical Operators
+5) Increment/Decrement Operators
+6) String Operators
+7) Array Operators
+8) Conditional assignment Operators
+
