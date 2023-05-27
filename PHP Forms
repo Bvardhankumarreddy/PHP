@@ -1,1 +1,54 @@
+PHP Form Handling
+
+The PHP superglobals $_GET and $_POST are used collect form-data
+
+Example: - Simple HTML form using POST method.
+
+<html>
+<body>
+
+<form action="welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
+
+Exaplanation: -
+
+When user fills the name and email data and clicks the submit button, the form data is sent to the "welcome.php". The form data is sent
+with HTTP POST method.
+
+Example: - Simple HTML form using GET method.
+
+<html>
+<body>
+
+<form action="welcome_get.php" method="get">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
+
+Explanation: - The same result is achieved after using this form.
+
+GET vs POST
+
+Both GET and POST create an array (e.g. array( key1 => value1, key2 => value2, key3 => value3, ...)). This array holds key/value pairs,
+where keys are the names of the form controls and values are the input data from user.
+
+Both GET and POST are treated as $_GET and $_POST. These superglobals, which means that they are always accessible, regardless of scope -
+and you can access then from any function, class or file without having do to anything special.
+
+$_GET is an array of variables passed to the current script via URL parameters.
+
+$_POST is an array of variables passed to the current script via the HTTP POST method.
+
+
+
 
